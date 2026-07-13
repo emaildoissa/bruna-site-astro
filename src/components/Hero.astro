@@ -1,167 +1,132 @@
 ---
+const images = [
+  "/assets/hero_living_room.jpg",
+  "/carrossel/Ap-Sa-Sala-02.jpg",
+  "/carrossel/ApdoBe-Arq.-Bruna-Schlos-sala-e-cozinha-01.jpg",
+  "/carrossel/2024-02-06-0249-Bruna-Schlos-Arq-Ape-Demetrio-_MG_0740-scaled.jpg"
+];
 ---
 
 <section
   id="topo"
-  class="relative min-h-[100svh] flex items-end md:items-center overflow-hidden pt-28 pb-16 md:pt-32 md:pb-24"
+  class="relative min-h-[100svh] flex items-center justify-center overflow-hidden"
 >
-  <!-- Ambient background -->
-  <div class="absolute inset-0 -z-10" aria-hidden="true">
-    <div
-      class="absolute inset-0 bg-gradient-to-br from-cream via-cream-dark to-[#e8dfd3]"
-    >
-    </div>
-    <div
-      class="absolute top-[-10%] right-[-8%] h-[55vmin] w-[55vmin] rounded-full bg-sand/25 blur-3xl"
-    >
-    </div>
-    <div
-      class="absolute bottom-[-15%] left-[-10%] h-[50vmin] w-[50vmin] rounded-full bg-terracotta/15 blur-3xl"
-    >
-    </div>
-    <!-- Decorative architectural grid -->
-    <div
-      class="absolute inset-0 opacity-[0.035]"
-      style="background-image: linear-gradient(var(--color-ink) 1px, transparent 1px), linear-gradient(90deg, var(--color-ink) 1px, transparent 1px); background-size: 64px 64px;"
-    >
-    </div>
+  <!-- Full-screen Background Carousel -->
+  <div class="absolute inset-0 -z-20 bg-ink" id="fullscreen-carousel">
+    {images.map((src, index) => (
+      <div 
+        class={`bg-slide absolute inset-0 transition-opacity duration-500 ease-in-out ${index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+      >
+        <img
+          src={src}
+          alt={`Bruna Schlos Arquitetura - Slide ${index + 1}`}
+          class="h-full w-full object-cover ken-burns-img"
+        />
+      </div>
+    ))}
   </div>
 
-  <div class="container-site w-full">
-    <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-end">
-      <div class="lg:col-span-7">
-        <p
-          class="reveal text-xs md:text-sm tracking-[0.35em] uppercase text-terracotta-dark mb-6 md:mb-8"
+  <!-- Dark Gradient Overlay for Readability -->
+  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-ink/95 via-ink/70 to-ink/20"></div>
+
+  <!-- Content -->
+  <div class="container-site w-full relative z-10 pt-20">
+    <div class="max-w-3xl">
+      <p
+        class="reveal text-xs md:text-sm tracking-[0.35em] uppercase text-sand-light mb-6 md:mb-8"
+      >
+        Porto Alegre · desde 2019
+      </p>
+
+      <h1
+        class="reveal reveal-delay-1 font-serif text-[clamp(3.5rem,8vw,6.5rem)] text-cream text-balance leading-[1.05]"
+      >
+        Arquitetura que<br />
+        <em class="italic text-terracotta">acolhe</em>
+        e transforma
+      </h1>
+
+      <p
+        class="reveal reveal-delay-2 mt-6 md:mt-8 max-w-xl text-base md:text-lg text-cream/80 leading-relaxed font-light"
+      >
+        Bruna Schlos Arquitetura de Interiores — projetos residenciais focados
+        em transformar o físico em acolhedor, unindo a sofisticação de alto
+        padrão ao aconchego de um lar sob medida.
+      </p>
+
+      <div
+        class="reveal reveal-delay-3 mt-10 flex flex-wrap items-center gap-4 md:gap-6"
+      >
+        <a
+          href="#projetos"
+          class="inline-flex items-center gap-2 rounded-full bg-terracotta px-8 py-4 text-sm text-white tracking-wide hover:bg-terracotta-dark transition-colors"
         >
-          Porto Alegre · desde 2019
-        </p>
-
-        <h1
-          class="reveal reveal-delay-1 font-serif text-[clamp(2.75rem,7vw,5.5rem)] text-ink text-balance"
+          Ver projetos
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            class="h-4 w-4"
+            aria-hidden="true"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </a>
+        <a
+          href="#sobre"
+          class="inline-flex items-center gap-2 rounded-full border border-line/30 bg-ink/40 backdrop-blur-sm px-8 py-4 text-sm text-cream tracking-wide hover:border-line/80 hover:bg-ink/60 transition-colors"
         >
-          Arquitetura que
-          <em class="italic text-terracotta-dark">acolhe</em>
-          e transforma
-        </h1>
-
-        <p
-          class="reveal reveal-delay-2 mt-6 md:mt-8 max-w-xl text-base md:text-lg text-ink-soft leading-relaxed"
-        >
-          Bruna Schlos Arquitetura de Interiores — projetos residenciais focados em 
-          transformar o físico em acolhedor, unindo a sofisticação de alto padrão ao aconchego de um lar sob medida.
-        </p>
-
-        <div
-          class="reveal reveal-delay-3 mt-10 flex flex-wrap items-center gap-4"
-        >
-          <a
-            href="#projetos"
-            class="inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 text-sm text-cream tracking-wide hover:bg-terracotta-dark transition-colors"
-          >
-            Ver projetos
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              class="h-4 w-4"
-              aria-hidden="true"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
-                clip-rule="evenodd"></path>
-            </svg>
-          </a>
-          <a
-            href="#sobre"
-            class="inline-flex items-center gap-2 rounded-full border border-line bg-white/50 px-7 py-3.5 text-sm text-ink tracking-wide hover:border-sand hover:bg-white transition-colors"
-          >
-            Conheça o escritório
-          </a>
-        </div>
-      </div>
-
-      <div class="lg:col-span-5 reveal reveal-delay-4">
-        <div class="relative mx-auto max-w-md lg:max-w-none lg:ml-auto">
-          <!-- Real architectural image with Blueprint signature -->
-          <div
-            class="relative aspect-[3/4] overflow-hidden rounded-sm shadow-2xl shadow-ink/10 group border border-line/50"
-          >
-            <img
-              src="/assets/hero_living_room.jpg"
-              alt="Design de interior residencial de alto padrão por Bruna Schlos"
-              class="absolute inset-0 h-full w-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105"
-            />
-            <!-- Dark gradient overlay for typography readability -->
-            <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-ink/40"></div>
-            
-            <!-- Geometric overlay suggesting space/architecture (Cotas & Nível) -->
-            <div class="absolute inset-0 flex flex-col justify-between p-6 md:p-8">
-              <div class="flex justify-between items-start">
-                <span
-                  class="font-mono text-[0.65rem] tracking-[0.2em] uppercase text-cream/80 bg-ink/40 backdrop-blur-xs px-2 py-0.5 border border-cream/20"
-                >
-                  [ v-01 / living ]
-                </span>
-                <span class="font-serif text-cream/90 text-lg italic tracking-widest">
-                  BS.
-                </span>
-              </div>
-              <div>
-                <div class="font-mono text-[0.6rem] text-sand mb-2 tracking-widest">[ NÍVEL SOL +0.15m ]</div>
-                <p class="font-serif text-2xl md:text-3xl text-cream leading-snug">
-                  Espaços que<br />contam histórias
-                </p>
-                <p class="mt-2 font-sans text-xs tracking-wider text-cream/70">
-                  Residencial · Interiores · Porto Alegre
-                </p>
-              </div>
-            </div>
-            <!-- Technical Blueprint Frame lines -->
-            <div
-              class="absolute inset-3 border border-cream/15 pointer-events-none"
-              aria-hidden="true"
-            >
-            </div>
-            <!-- Outer grid ticking markers (The Visual Signature) -->
-            <span class="absolute top-1 left-2 font-mono text-[0.55rem] text-cream/35">x: 042</span>
-            <span class="absolute bottom-1 right-2 font-mono text-[0.55rem] text-cream/35">y: 580</span>
-          </div>
-
-          <!-- Floating stat chip with Blueprint styling -->
-          <div
-            class="absolute -bottom-5 -left-3 md:-left-8 rounded-sm bg-white px-5 py-4 shadow-xl shadow-ink/8 border border-line"
-          >
-            <div class="absolute -top-1.5 -left-1.5 font-mono text-[0.5rem] text-muted">⊕ P.01</div>
-            <p class="font-serif text-3xl text-ink">70+</p>
-            <p class="text-[0.65rem] font-mono uppercase tracking-wider text-muted mt-0.5">
-              [ proj_realizados ]
-            </p>
-          </div>
-        </div>
+          Conheça o escritório
+        </a>
       </div>
     </div>
-  </div>
-
-  <!-- Blueprint Alignment Line (Visual Signature) -->
-  <div class="absolute left-0 right-0 bottom-24 border-b border-line/30 flex justify-between px-6 md:px-12 pointer-events-none" aria-hidden="true">
-    <span class="font-mono text-[0.6rem] text-muted tracking-widest translate-y-[-100%] pb-1">
-      COTA: 2.80m [ ELEVAÇÃO PRINCIPAL ]
-    </span>
-    <span class="font-mono text-[0.6rem] text-muted tracking-widest translate-y-[-100%] pb-1">
-      EIXO Z-03
-    </span>
   </div>
 
   <!-- Scroll hint -->
   <div
-    class="absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-muted"
+    class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-cream/60"
     aria-hidden="true"
   >
     <span class="text-[0.6rem] tracking-[0.3em] uppercase">Scroll</span>
-    <span class="scroll-line block h-8 w-px bg-line"></span>
+    <span class="scroll-line block h-8 w-px bg-line/60"></span>
   </div>
 </section>
+
+<script>
+  function initHeroBackgroundCarousel() {
+    const slides = document.querySelectorAll('.bg-slide');
+    if (slides.length <= 1) return;
+    
+    if (window.heroBgInterval) clearInterval(window.heroBgInterval);
+    
+    let currentIndex = 0;
+    
+    // Set initial ken burns state
+    slides[0].querySelector('.ken-burns-img')?.classList.add('is-active');
+
+    window.heroBgInterval = setInterval(() => {
+      // Fade out current slide
+      slides[currentIndex].classList.remove('opacity-100', 'z-10');
+      slides[currentIndex].classList.add('opacity-0', 'z-0');
+      slides[currentIndex].querySelector('.ken-burns-img')?.classList.remove('is-active');
+      
+      // Move to next slide
+      currentIndex = (currentIndex + 1) % slides.length;
+      
+      // Fade in next slide
+      slides[currentIndex].classList.remove('opacity-0', 'z-0');
+      slides[currentIndex].classList.add('opacity-100', 'z-10');
+      slides[currentIndex].querySelector('.ken-burns-img')?.classList.add('is-active');
+    }, 5000);
+  }
+
+  // Initialize
+  initHeroBackgroundCarousel();
+  document.addEventListener('astro:page-load', initHeroBackgroundCarousel);
+</script>
 
 <style>
   .scroll-line {
@@ -179,5 +144,15 @@
       opacity: 1;
       transform: scaleY(1);
     }
+  }
+
+  /* Ken Burns Effect */
+  .ken-burns-img {
+    transform: scale(1);
+    transition: transform 6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .ken-burns-img.is-active {
+    transform: scale(1.1);
   }
 </style>

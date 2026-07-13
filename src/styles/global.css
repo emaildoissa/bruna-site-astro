@@ -1,21 +1,48 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Nexa';
+  src: url('/fonts/Nexa-Regular.otf') format('opentype'),
+       url('/fonts/Nexa-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nexa';
+  src: url('/fonts/Nexa-Bold.otf') format('opentype'),
+       url('/fonts/Nexa-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nexa';
+  src: url('/fonts/Nexa-Light.otf') format('opentype'),
+       url('/fonts/Nexa-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
-  --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-serif: "Nexa", "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-sans: "Nexa", "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
   --font-mono: "IBM Plex Mono", monospace;
 
-  --color-cream: #f5f2eb;
-  --color-cream-dark: #eae6dc;
-  --color-sand: #b89c72;
-  --color-sand-light: #d5c4aa;
-  --color-terracotta: #a66e53;
-  --color-terracotta-dark: #8e573d;
-  --color-ink: #2a2421;
-  --color-ink-soft: #453c38;
-  --color-muted: #8f8b83;
-  --color-line: #e3ddd3;
-  --color-white: #fcfaf6;
+  --color-cream: #E3D5B8;
+  --color-cream-dark: #D4C6A9;
+  --color-sand: #66683E;
+  --color-sand-light: #8E9064;
+  --color-terracotta: #C96969;
+  --color-terracotta-dark: #B05555;
+  --color-ink: #28555D;
+  --color-ink-soft: #386A73;
+  --color-muted: #597378;
+  --color-line: #C7BA9F;
+  --color-white: #EDE1C7;
 }
 
 @layer base {
@@ -56,8 +83,8 @@
   h2,
   h3,
   h4 {
-    font-family: var(--font-serif);
-    font-weight: 500;
+    font-family: var(--font-sans);
+    font-weight: 700;
     line-height: 1.15;
     letter-spacing: -0.01em;
   }
