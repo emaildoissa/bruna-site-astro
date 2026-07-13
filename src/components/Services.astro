@@ -1,0 +1,89 @@
+---
+import ServiceCard from "./ServiceCard.astro";
+
+const services = [
+  {
+    number: "01",
+    title: "Arquitetura",
+    description:
+      "Projetos do zero, desde a escolha do terreno até a execução — volumes, fluxos e a relação com o entorno pensados com precisão.",
+    items: [
+      "Projeto arquitetônico completo",
+      "Estudo de viabilidade e terreno",
+      "Acompanhamento de obra",
+    ],
+  },
+  {
+    number: "02",
+    title: "Arquitetura de Interiores",
+    description:
+      "Reformas ou imóveis novos para residências e comércios, com layout inteligente, marcenaria e materiais que elevam o cotidiano.",
+    items: [
+      "Projeto de interiores completo",
+      "Reformas e readequações",
+      "Residencial e comercial",
+    ],
+  },
+  {
+    number: "03",
+    title: "Consultoria de Decoração",
+    description:
+      "Mudanças pontuais com grande impacto: disposição de móveis, cores, iluminação e detalhes que renovam o ambiente sem obra pesada.",
+    items: [
+      "Orientação de layout e móveis",
+      "Paleta de cores e materiais",
+      "Iluminação e ambientação",
+    ],
+  },
+];
+---
+
+<section id="servicos" class="py-24 md:py-32 bg-cream relative overflow-hidden border-t border-line/40">
+  <!-- Blueprint Section Line (Signature) -->
+  <div class="absolute left-0 right-0 top-0 flex justify-between px-6 md:px-12 pointer-events-none" aria-hidden="true">
+    <span class="font-mono text-[0.55rem] text-muted/65 tracking-widest pt-1.5">
+      [ SEC_03 / PROGRAMA DE NECESSIDADES ]
+    </span>
+    <span class="font-mono text-[0.55rem] text-muted/65 tracking-widest pt-1.5">
+      REF: S-03
+    </span>
+  </div>
+
+  <div class="container-site">
+    <div class="max-w-2xl mb-14 md:mb-20">
+      <p
+        class="reveal text-xs tracking-[0.3em] uppercase text-terracotta-dark mb-4"
+      >
+        O que fazemos
+      </p>
+      <h2
+        class="reveal reveal-delay-1 font-serif text-4xl md:text-5xl text-ink text-balance"
+      >
+        Três caminhos para o seu espaço ideal
+      </h2>
+      <p
+        class="reveal reveal-delay-2 mt-5 text-base text-muted leading-relaxed"
+      >
+        Seja um projeto do zero, uma reforma completa ou um ajuste pontual —
+        cada serviço é desenhado para o seu momento e o seu ritmo.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      {
+        services.map((service, i) => (
+          <ServiceCard
+            {...service}
+            delay={
+              i === 1
+                ? "reveal-delay-1"
+                : i === 2
+                  ? "reveal-delay-2"
+                  : ""
+            }
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>

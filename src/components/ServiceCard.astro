@@ -1,0 +1,47 @@
+---
+interface Props {
+  number: string;
+  title: string;
+  description: string;
+  items: string[];
+  delay?: string;
+}
+
+const { number, title, description, items, delay = "" } = Astro.props;
+---
+
+<article
+  class:list={[
+    "reveal group relative flex flex-col h-full rounded-sm border border-line/60 bg-cream p-8 md:p-10 transition-all duration-500 hover:border-sand hover:shadow-xl hover:shadow-ink/5 hover:-translate-y-1",
+    delay,
+  ]}
+>
+  <!-- Technical anchor crosshair -->
+  <div class="absolute top-3 right-3 font-mono text-[0.6rem] text-muted/30 select-none">⊕</div>
+
+  <span
+    class="font-mono text-xs text-sand tracking-widest leading-none select-none"
+  >
+    [ DETALHE_{number} ]
+  </span>
+
+  <h3 class="mt-4 font-serif text-2xl md:text-3xl text-ink">{title}</h3>
+
+  <p class="mt-4 text-sm md:text-base text-muted leading-relaxed flex-1">
+    {description}
+  </p>
+
+  <ul class="mt-8 space-y-2.5 border-t border-line/50 pt-6">
+    {
+      items.map((item) => (
+        <li class="flex items-start gap-3 text-sm text-ink-soft">
+          <span
+            class="mt-2.5 h-1.5 w-1.5 shrink-0 bg-terracotta rotate-45"
+            aria-hidden="true"
+          />
+          {item}
+        </li>
+      ))
+    }
+  </ul>
+</article>

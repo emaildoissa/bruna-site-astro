@@ -1,0 +1,28 @@
+---
+const stats = [
+  { value: "70+", label: "Projetos realizados" },
+  { value: "5+", label: "Anos de mercado" },
+  { value: "2019", label: "Fundação do escritório" },
+  { value: "POA", label: "Base em Porto Alegre" },
+];
+---
+
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+  {
+    stats.map((stat, i) => (
+      <div
+        class:list={[
+          "reveal border-t border-line pt-5",
+          i === 1 && "reveal-delay-1",
+          i === 2 && "reveal-delay-2",
+          i === 3 && "reveal-delay-3",
+        ]}
+      >
+        <p class="font-serif text-4xl md:text-5xl text-ink tracking-tight">
+          {stat.value}
+        </p>
+        <p class="mt-2 text-sm text-muted tracking-wide">{stat.label}</p>
+      </div>
+    ))
+  }
+</div>

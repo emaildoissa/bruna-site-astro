@@ -1,0 +1,193 @@
+---
+const links = [
+  { href: "/#sobre", label: "Sobre" },
+  { href: "/#servicos", label: "Serviços" },
+  { href: "/#projetos", label: "Projetos" },
+  { href: "/#contato", label: "Contato" },
+];
+---
+
+<header
+  id="site-header"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+>
+  <div class="container-site">
+    <div
+      class="header-inner flex items-center justify-between py-5 md:py-6 transition-all duration-500"
+    >
+      <a
+        href="#topo"
+        class="group relative z-10 flex flex-col leading-none"
+        aria-label="Bruna Schlos — início"
+      >
+        <span
+          class="font-serif text-xl md:text-2xl tracking-wide text-ink group-hover:text-terracotta-dark transition-colors"
+        >
+          Bruna Schlos
+        </span>
+        <span
+          class="mt-1 text-[0.65rem] md:text-[0.7rem] tracking-[0.2em] uppercase text-muted font-mono font-normal"
+        >
+          [ Arquitetura de Interiores ]
+        </span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-10" aria-label="Principal">
+        {
+          links.map((link, idx) => (
+            <a
+              href={link.href}
+              class="nav-link text-sm tracking-wide text-ink-soft hover:text-terracotta-dark relative after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-terracotta after:transition-all after:duration-300 hover:after:w-full"
+            >
+              <span class="font-mono text-[0.65rem] text-muted mr-1 opacity-70">0{idx + 1}.</span>{link.label}
+            </a>
+          ))
+        }
+        <a
+          href="https://wa.me/5551999414246?text=Ol%C3%A1%20Bruna!%20Gostaria%20de%20conversar%20sobre%20um%20projeto."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm text-cream tracking-wide hover:bg-terracotta-dark transition-colors"
+        >
+          Fale comigo
+        </a>
+      </nav>
+
+      <button
+        type="button"
+        id="menu-toggle"
+        class="md:hidden relative z-10 flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white/60 backdrop-blur-sm"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span class="sr-only">Menu</span>
+        <span class="menu-icon flex flex-col gap-1.5">
+          <span class="block h-px w-5 bg-ink transition-all duration-300"></span>
+          <span class="block h-px w-5 bg-ink transition-all duration-300"></span>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <div
+    id="mobile-menu"
+    class="mobile-menu md:hidden fixed inset-0 z-0 bg-cream/98 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-400"
+    aria-hidden="true"
+  >
+    <nav
+      class="flex h-full flex-col items-center justify-center gap-8"
+      aria-label="Mobile"
+    >
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class="mobile-link font-serif text-3xl text-ink hover:text-terracotta-dark"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <a
+        href="https://wa.me/5551999414246?text=Ol%C3%A1%20Bruna!%20Gostaria%20de%20conversar%20sobre%20um%20projeto."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-4 inline-flex items-center rounded-full bg-ink px-8 py-3 text-sm text-cream tracking-wide"
+      >
+        WhatsApp
+      </a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  #site-header.is-scrolled {
+    background: color-mix(in srgb, var(--color-cream) 88%, transparent);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  #site-header.is-scrolled .header-inner {
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
+  }
+
+  #site-header.menu-open .menu-icon span:first-child {
+    transform: translateY(3.5px) rotate(45deg);
+  }
+
+  #site-header.menu-open .menu-icon span:last-child {
+    transform: translateY(-3.5px) rotate(-45deg);
+  }
+
+  #site-header.menu-open .mobile-menu {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>
+
+<script>
+  const header = document.getElementById("site-header");
+  const toggle = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const mobileLinks = document.querySelectorAll(".mobile-link");
+
+  function setMenuOpen(open: boolean) {
+    header?.classList.toggle("menu-open", open);
+    toggle?.setAttribute("aria-expanded", String(open));
+    toggle?.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+    mobileMenu?.setAttribute("aria-hidden", String(!open));
+    document.body.style.overflow = open ? "hidden" : "";
+  }
+
+  toggle?.addEventListener("click", () => {
+    const open = !header?.classList.contains("menu-open");
+    setMenuOpen(open);
+  });
+
+  mobileLinks.forEach((link) => {
+    link.addEventListener("click", () => setMenuOpen(false));
+  });
+
+  // Smooth scroll intercept for home page
+  const isHome = window.location.pathname === "/";
+  if (isHome) {
+    const navLinks = document.querySelectorAll(".nav-link, .mobile-link");
+    navLinks.forEach(link => {
+      link.addEventListener("click", (e) => {
+        const href = link.getAttribute("href");
+        if (href && href.startsWith("/#")) {
+          const targetId = href.substring(2);
+          const targetEl = document.getElementById(targetId);
+          if (targetEl) {
+            e.preventDefault();
+            setMenuOpen(false);
+            targetEl.scrollIntoView({ behavior: "smooth" });
+            history.pushState(null, "", href);
+          }
+        }
+      });
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      header?.classList.toggle("is-scrolled", window.scrollY > 40);
+    },
+    { passive: true },
+  );
+</script>
