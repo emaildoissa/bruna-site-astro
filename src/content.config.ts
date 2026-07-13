@@ -14,6 +14,7 @@ const projects = defineCollection({
     order: z.number().default(99),
     coverGradient: z.string(),
     coverImage: z.string().optional(),
+    gallery: z.array(z.string()).optional(),
     accentColor: z.string().optional(),
     concept: z.string().optional(),
     elements: z.string().optional(),
