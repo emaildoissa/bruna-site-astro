@@ -9,7 +9,7 @@ const links = [
 
 <header
   id="site-header"
-  class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+  class="sticky top-0 z-50 bg-ink transition-all duration-500"
 >
   <div class="container-site">
     <div
@@ -111,22 +111,6 @@ const links = [
     --btn-text: var(--color-ink);
   }
 
-  #site-header.is-scrolled {
-    background: color-mix(in srgb, var(--color-cream) 92%, transparent);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--color-line);
-    --logo-color: var(--color-ink);
-    --subtitle-color: var(--color-muted);
-    --link-color: var(--color-ink-soft);
-    --btn-bg: var(--color-ink);
-    --btn-text: var(--color-cream);
-  }
-
-  #site-header.is-scrolled .header-inner {
-    padding-top: 0.85rem;
-    padding-bottom: 0.85rem;
-  }
-
   #site-header.menu-open .menu-icon span:first-child {
     transform: translateY(3.5px) rotate(45deg);
   }
@@ -196,12 +180,4 @@ const links = [
       });
     });
   }
-
-  window.addEventListener(
-    "scroll",
-    () => {
-      header?.classList.toggle("is-scrolled", window.scrollY > 40);
-    },
-    { passive: true },
-  );
 </script>
