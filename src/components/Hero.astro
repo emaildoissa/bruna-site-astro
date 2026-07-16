@@ -1,10 +1,10 @@
 ---
 const images = [
-  "/carrossel/01.jpg",
-  "/carrossel/02.jpg",
-  "/carrossel/03.jpg",
-  "/carrossel/04.jpg",
-  "/carrossel/06.jpg"
+  { src: "/carrossel/01.jpg", position: "object-[25%_center] md:object-center" },
+  { src: "/carrossel/02.jpg", position: "object-[35%_center] md:object-center" },
+  { src: "/carrossel/03.jpg", position: "object-[25%_center] md:object-center" },
+  { src: "/carrossel/04.jpg", position: "object-center" },
+  { src: "/carrossel/06.jpg", position: "object-[40%_center] md:object-center" }
 ];
 ---
 
@@ -14,14 +14,14 @@ const images = [
 >
   <!-- Full-screen Background Carousel -->
   <div class="absolute inset-0 -z-20 bg-ink" id="fullscreen-carousel">
-    {images.map((src, index) => (
+    {images.map((img, index) => (
       <div 
         class={`bg-slide absolute inset-0 transition-opacity duration-500 ease-in-out ${index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
       >
         <img
-          src={src}
+          src={img.src}
           alt={`Bruna Schlos Arquitetura - Slide ${index + 1}`}
-          class="h-full w-full object-cover ken-burns-img"
+          class={`h-full w-full object-cover ken-burns-img ${img.position}`}
         />
       </div>
     ))}
@@ -32,57 +32,12 @@ const images = [
   <div class="absolute inset-0 -z-10 bg-gradient-to-b from-black/60 via-transparent to-transparent"></div>
 
   <!-- Content -->
-  <div class="container-site w-full relative z-10 pt-20">
-    <div class="max-w-3xl">
-      <p
-        class="reveal text-xs md:text-sm tracking-[0.35em] uppercase text-sand-light mb-6 md:mb-8"
-      >
-        Porto Alegre · desde 2019
-      </p>
-
-      <img
-        src="/logo.png"
-        alt="Bruna Schlos Arquitetura de Interiores"
-        class="reveal reveal-delay-1 max-w-[200px] md:max-w-[280px] mb-6"
-      />
-
-      <p
-        class="reveal reveal-delay-2 mt-6 md:mt-8 max-w-xl text-base md:text-lg text-cream/80 leading-relaxed font-light"
-      >
-        Bruna Schlos Arquitetura de Interiores — projetos residenciais focados
-        em transformar o físico em acolhedor, unindo a sofisticação de alto
-        padrão ao aconchego de um lar sob medida.
-      </p>
-
-      <div
-        class="reveal reveal-delay-3 mt-10 flex flex-wrap items-center gap-4 md:gap-6"
-      >
-        <a
-          href="#projetos"
-          class="inline-flex items-center gap-2 rounded-full bg-terracotta px-8 py-4 text-sm text-white tracking-wide hover:bg-terracotta-dark transition-colors"
-        >
-          Ver projetos
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            class="h-4 w-4"
-            aria-hidden="true"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
-              clip-rule="evenodd"></path>
-          </svg>
-        </a>
-        <a
-          href="#sobre"
-          class="inline-flex items-center gap-2 rounded-full border border-line/30 bg-ink/40 backdrop-blur-sm px-8 py-4 text-sm text-cream tracking-wide hover:border-line/80 hover:bg-ink/60 transition-colors"
-        >
-          Conheça o escritório
-        </a>
-      </div>
-    </div>
+  <div class="container-site w-full h-full relative z-10 flex items-center justify-center">
+    <img
+      src="/logo.png"
+      alt="Bruna Schlos Arquitetura de Interiores"
+      class="reveal max-w-[250px] md:max-w-[400px]"
+    />
   </div>
 
   <!-- Scroll hint -->
