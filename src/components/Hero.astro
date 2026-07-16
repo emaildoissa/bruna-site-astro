@@ -1,10 +1,22 @@
 ---
 const images = [
-  { src: "/carrossel/01.jpg", position: "object-[25%_center] md:object-center" },
-  { src: "/carrossel/02.jpg", position: "object-[35%_center] md:object-center" },
-  { src: "/carrossel/03.jpg", position: "object-[25%_center] md:object-center" },
+  {
+    src: "/carrossel/03.jpg",
+    position: "object-[25%_center] md:object-center",
+  },
+  {
+    src: "/carrossel/02.jpg",
+    position: "object-[35%_center] md:object-center",
+  },
+  {
+    src: "/carrossel/01.jpg",
+    position: "object-[25%_center] md:object-center",
+  },
   { src: "/carrossel/04.jpg", position: "object-center" },
-  { src: "/carrossel/06.jpg", position: "object-[40%_center] md:object-center" }
+  {
+    src: "/carrossel/06.jpg",
+    position: "object-[40%_center] md:object-center",
+  },
 ];
 ---
 
@@ -14,25 +26,35 @@ const images = [
 >
   <!-- Full-screen Background Carousel -->
   <div class="absolute inset-0 -z-20 bg-ink" id="fullscreen-carousel">
-    {images.map((img, index) => (
-      <div 
-        class={`bg-slide absolute inset-0 transition-opacity duration-500 ease-in-out ${index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
-      >
-        <img
-          src={img.src}
-          alt={`Bruna Schlos Arquitetura - Slide ${index + 1}`}
-          class={`h-full w-full object-cover ken-burns-img ${img.position}`}
-        />
-      </div>
-    ))}
+    {
+      images.map((img, index) => (
+        <div
+          class={`bg-slide absolute inset-0 transition-opacity duration-500 ease-in-out ${index === 0 ? "opacity-100 z-10" : "opacity-0 z-0"}`}
+        >
+          <img
+            src={img.src}
+            alt={`Bruna Schlos Arquitetura - Slide ${index + 1}`}
+            class={`h-full w-full object-cover ken-burns-img ${img.position}`}
+          />
+        </div>
+      ))
+    }
   </div>
 
   <!-- Dark Gradient Overlay for Readability -->
-  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
-  <div class="absolute inset-0 -z-10 bg-gradient-to-b from-black/60 via-transparent to-transparent"></div>
+  <div
+    class="absolute inset-0 -z-10 bg-gradient-to-r from-black/80 via-black/40 to-transparent"
+  >
+  </div>
+  <div
+    class="absolute inset-0 -z-10 bg-gradient-to-b from-black/60 via-transparent to-transparent"
+  >
+  </div>
 
   <!-- Content -->
-  <div class="container-site w-full h-full relative z-10 flex items-center justify-center">
+  <div
+    class="container-site w-full h-full relative z-10 flex items-center justify-center"
+  >
     <img
       src="/logo.png"
       alt="Bruna Schlos Arquitetura de Interiores"
@@ -51,36 +73,46 @@ const images = [
 </section>
 
 <script>
-  function initHeroBackgroundCarousel() {
-    const slides = document.querySelectorAll('.bg-slide');
-    if (slides.length <= 1) return;
-    
-    if (window.heroBgInterval) clearInterval(window.heroBgInterval);
-    
-    let currentIndex = 0;
-    
-    // Set initial ken burns state
-    slides[0].querySelector('.ken-burns-img')?.classList.add('is-active');
+  declare global {
+    interface Window {
+      heroBgInterval: number;
+    }
+  }
 
-    window.heroBgInterval = setInterval(() => {
+  function initHeroBackgroundCarousel() {
+    const slides = document.querySelectorAll(".bg-slide");
+    if (slides.length <= 1) return;
+
+    if (window.heroBgInterval) clearInterval(window.heroBgInterval);
+
+    let currentIndex = 0;
+
+    // Set initial ken burns state
+    slides[0].querySelector(".ken-burns-img")?.classList.add("is-active");
+
+    window.heroBgInterval = window.setInterval(() => {
       // Fade out current slide
-      slides[currentIndex].classList.remove('opacity-100', 'z-10');
-      slides[currentIndex].classList.add('opacity-0', 'z-0');
-      slides[currentIndex].querySelector('.ken-burns-img')?.classList.remove('is-active');
-      
+      slides[currentIndex].classList.remove("opacity-100", "z-10");
+      slides[currentIndex].classList.add("opacity-0", "z-0");
+      slides[currentIndex]
+        .querySelector(".ken-burns-img")
+        ?.classList.remove("is-active");
+
       // Move to next slide
       currentIndex = (currentIndex + 1) % slides.length;
-      
+
       // Fade in next slide
-      slides[currentIndex].classList.remove('opacity-0', 'z-0');
-      slides[currentIndex].classList.add('opacity-100', 'z-10');
-      slides[currentIndex].querySelector('.ken-burns-img')?.classList.add('is-active');
+      slides[currentIndex].classList.remove("opacity-0", "z-0");
+      slides[currentIndex].classList.add("opacity-100", "z-10");
+      slides[currentIndex]
+        .querySelector(".ken-burns-img")
+        ?.classList.add("is-active");
     }, 5000);
   }
 
   // Initialize
   initHeroBackgroundCarousel();
-  document.addEventListener('astro:page-load', initHeroBackgroundCarousel);
+  document.addEventListener("astro:page-load", initHeroBackgroundCarousel);
 </script>
 
 <style>
@@ -106,7 +138,7 @@ const images = [
     transform: scale(1);
     transition: transform 6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
-  
+
   .ken-burns-img.is-active {
     transform: scale(1.1);
   }
