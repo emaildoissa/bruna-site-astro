@@ -61,15 +61,6 @@ const images = [
       class="reveal max-w-[250px] md:max-w-[400px]"
     />
   </div>
-
-  <!-- Scroll hint -->
-  <div
-    class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-cream/60"
-    aria-hidden="true"
-  >
-    <span class="text-[0.6rem] tracking-[0.3em] uppercase">Scroll</span>
-    <span class="scroll-line block h-8 w-px bg-line/60"></span>
-  </div>
 </section>
 
 <script>
@@ -116,23 +107,6 @@ const images = [
 </script>
 
 <style>
-  .scroll-line {
-    animation: scroll-pulse 1.8s ease-in-out infinite;
-    transform-origin: top;
-  }
-
-  @keyframes scroll-pulse {
-    0%,
-    100% {
-      opacity: 0.3;
-      transform: scaleY(0.6);
-    }
-    50% {
-      opacity: 1;
-      transform: scaleY(1);
-    }
-  }
-
   /* Ken Burns Effect */
   .ken-burns-img {
     transform: scale(1);
