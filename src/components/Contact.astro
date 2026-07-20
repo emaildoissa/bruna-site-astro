@@ -18,12 +18,6 @@ const contacts = [
     href: "https://instagram.com/",
     external: true,
   },
-  {
-    label: "Endereço",
-    value: "R. Felicíssimo de Azevedo, 400 — Porto Alegre, RS",
-    href: "https://maps.google.com/?q=R.+Felic%C3%ADssimo+de+Azevedo,+400,+Porto+Alegre",
-    external: true,
-  },
 ];
 ---
 
@@ -39,10 +33,9 @@ const contacts = [
   </div>
 
   <div class="container-site relative">
-    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-      <!-- Left Contact Column -->
-      <div class="lg:col-span-5 space-y-8">
-        <div>
+    <div class="max-w-2xl mx-auto">
+      <div class="space-y-8">
+        <div class="text-center md:text-left">
           <p
             class="reveal text-xs tracking-[0.3em] uppercase text-terracotta-dark mb-4"
           >
@@ -85,20 +78,6 @@ const contacts = [
               ))
             }
           </ul>
-        </div>
-      </div>
-
-      <!-- Right Map Column (Poa Map Graphic) -->
-      <div class="lg:col-span-7 reveal reveal-delay-4">
-        <div class="relative aspect-[4/3] overflow-hidden rounded-sm border border-line/60 shadow-2xl shadow-ink/10 group">
-          <img
-            src="/assets/poa_map.jpg"
-            alt="Mapa conceitual do escritório de Bruna Schlos no bairro São João em Porto Alegre"
-            class="absolute inset-0 h-full w-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-102"
-          />
-          <div class="absolute inset-3 border border-ink/5 pointer-events-none"></div>
-          <span class="absolute bottom-2.5 left-3 font-mono text-[0.55rem] text-ink/40">ref: c-05 / localização</span>
-          <span class="absolute top-2.5 right-3 font-mono text-[0.55rem] text-ink/40">bairro são joão</span>
         </div>
       </div>
     </div>

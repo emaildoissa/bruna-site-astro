@@ -4,36 +4,42 @@ import ServiceCard from "./ServiceCard.astro";
 const services = [
   {
     number: "01",
-    title: "Arquitetura",
+    title: "Projeto de Arquitetura de Interiores",
     description:
-      "Projetos do zero, desde a escolha do terreno até a execução — volumes, fluxos e a relação com o entorno pensados com precisão.",
-    items: [
-      "Projeto arquitetônico completo",
-      "Estudo de viabilidade e terreno",
-      "Acompanhamento de obra",
-    ],
+      "Transforme seu imóvel em um espaço que conta a sua história. Um bom projeto não começa pelo metro quadrado — começa por você. Antes de qualquer decisão de layout, acabamento ou mobiliário, mergulhamos nos seus hábitos, na sua rotina e no que você imagina sentir quando chegar em casa. O projeto é uma construção conjunta. Ao longo de cada etapa, conduzimos você por um método estruturado que transforma referências, desejos e sonhos em decisões concretas — com clareza, segurança e sem achismos. Você participa, escolhe e aprova. Nós traduzimos tudo isso em um ambiente funcional, sofisticado e inconfundivelmente seu.",
+    items: [],
+    cta: "Solicite um orçamento para seu projeto",
+    href: "https://wa.me/5551999414246?text=Ol%C3%A1%20Bruna!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20projeto.",
   },
   {
     number: "02",
-    title: "Arquitetura de Interiores",
+    title: "Assessoria de Obra",
     description:
-      "Reformas ou imóveis novos para residências e comércios, com layout inteligente, marcenaria e materiais que elevam o cotidiano.",
+      "Sua reforma, do jeito que deveria ser. Cuidar de uma obra exige tempo, atenção e um conhecimento técnico que a maioria das pessoas simplesmente não tem — e não precisa ter. Estamos aqui para assumir essa responsabilidade com você, garantindo que cada decisão tomada em obra seja fiel ao projeto que construímos juntos. Cuidamos de tudo:",
     items: [
-      "Projeto de interiores completo",
-      "Reformas e readequações",
-      "Residencial e comercial",
+      "Orçamentação detalhada de todos os itens, sem surpresas no meio do caminho",
+      "Coordenação de fornecedores, prazos e qualidade de execução",
+      "Vistorias semanais para garantir fidelidade ao projeto",
+      "Acompanhamento em lojas e showrooms para escolhas mais seguras e assertivas",
+      "Suporte direto para todas as suas dúvidas durante o processo",
     ],
+    footerText: "Você mantém sua rotina. Nós entregamos o espaço pronto.",
+    cta: "Solicite uma proposta de assessoria",
+    href: "https://wa.me/5551999414246?text=Ol%C3%A1%20Bruna!%20Gostaria%20de%20solicitar%20uma%20proposta%20de%20assessoria%20de%20obra.",
   },
   {
     number: "03",
-    title: "Consultoria de Decoração",
+    title: "Consultoria Personalizada",
     description:
-      "Mudanças pontuais com grande impacto: disposição de móveis, cores, iluminação e detalhes que renovam o ambiente sem obra pesada.",
+      "Um novo olhar para o seu espaço — sem necessidade de obra. Às vezes, o que você precisa não é de um projeto completo. É de um direcionamento certeiro. Por meio de um método objetivo e com um investimento acessível, a consultoria se adapta à sua necessidade real — sem obra, sem complicação:",
     items: [
-      "Orientação de layout e móveis",
-      "Paleta de cores e materiais",
-      "Iluminação e ambientação",
+      "Quer aproveitar melhor o que já tem? Reorganizamos o layout e o mobiliário existente para extrair o máximo do seu espaço — sem mover uma parede.",
+      "Sente que falta personalidade no ambiente? Definimos paleta de cores e elementos decorativos que traduzem quem você é — sem nenhuma intervenção estrutural.",
+      "A iluminação está genérica e pouco aconchegante? Desenvolvemos sugestões que transformam completamente a atmosfera do espaço — sem obra.",
+      "Está pensando em comprar um imóvel? Avaliamos o potencial do espaço e te ajudamos a tomar uma decisão mais segura — antes de qualquer comprometimento.",
     ],
+    cta: "Solicite uma consultoria",
+    href: "https://wa.me/5551999414246?text=Ol%C3%A1%20Bruna!%20Gostaria%20de%20solicitar%20uma%20consultoria.",
   },
 ];
 ---
@@ -69,7 +75,7 @@ const services = [
       </p>
     </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+    <div class="flex flex-col gap-8 md:gap-12">
       {
         services.map((service, i) => (
           <ServiceCard
