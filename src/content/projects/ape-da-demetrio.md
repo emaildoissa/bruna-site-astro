@@ -18,10 +18,8 @@ gallery: [
   "/ape-da-demetrio/2026-04-30 0421 Bruna Schlos Arquitetura - Ape Demetrio-IMG_5100.jpg"
 ]
 accentColor: "#a67c5d"
-concept: "[ Espaço para descrever o conceito central do projeto ]"
-elements: "[ Espaço para listar os elementos, texturas e materiais ]"
+concept: "Identidade e sofisticação no dia a dia."
+elements: "Design funcional, iluminação integrada, marcenaria sob medida e paleta neutra."
 ---
 
-No **Apê Demétrio**, o objetivo foi criar um espaço que refletisse a identidade de quem o habita, aliando praticidade e um design sofisticado.
-
-[ Espaço para detalhar os fluxos, as escolhas arquitetônicas, a iluminação e as integrações dos ambientes. ]
+No **Apê Demétrio**, o objetivo foi criar um espaço que refletisse a identidade de quem o habita, aliando praticidade e um design sofisticado. Os fluxos integrados e a iluminação foram pensados para maximizar o conforto diário.

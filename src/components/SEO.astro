@@ -1,0 +1,86 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  breadcrumbs?: Array<{ name: string; item: string }>;
+}
+
+const {
+  title = "Bruna Schlos | Arquitetura Criativa",
+  description = "Escritório de arquitetura residencial e de interiores em Porto Alegre. Projetos do zero, reformas e consultoria de decoração com olhar acolhedor e criativo.",
+  image,
+  breadcrumbs,
+} = Astro.props;
+
+const siteUrl = Astro.site
+  ? Astro.site.origin
+  : "https://brunaschlos.com.br";
+
+const currentUrl = Astro.url;
+
+const logoUrl = `${siteUrl}/logo.png`;
+const ogImage = image ?? `${siteUrl}/og-image.jpg`;
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Bruna Schlos Arquitetura de Interiores",
+  url: siteUrl,
+  logo: logoUrl,
+  description,
+  founder: {
+    "@type": "Person",
+    name: "Bruna Schlos",
+    jobTitle: "Arquiteta e Urbanista",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+55-51-99941-4246",
+    contactType: "customer service",
+    areaServed: "BR-RS",
+    availableLanguage: ["Portuguese"],
+  },
+  sameAs: [
+    "https://www.instagram.com/brunaschlos.arq/",
+    "https://wa.me/5551999414246",
+  ],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "R. Felicíssimo de Azevedo, 400 - São João",
+    addressLocality: "Porto Alegre",
+    addressRegion: "RS",
+    addressCountry: "BR",
+  },
+};
+
+let breadcrumbSchema;
+
+if (breadcrumbs && breadcrumbs.length > 0) {
+  breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: breadcrumbs.map((crumb, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: crumb.name,
+      item: crumb.item.startsWith("http")
+        ? crumb.item
+        : `${siteUrl}${crumb.item}`,
+    })),
+  };
+}
+---
+
+{
+  breadcrumbSchema && (
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(breadcrumbSchema)}
+    />
+  )
+}
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify(organizationSchema)}
+/>

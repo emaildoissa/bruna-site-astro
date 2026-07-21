@@ -18,10 +18,8 @@ gallery: [
   "/ape-da-duque/2025-07-30 0358 Bruna Schlos Arq - Apto Duque-_MG_4242.jpg"
 ]
 accentColor: "#a67c5d"
-concept: "[ Espaço para descrever o conceito central do projeto ]"
-elements: "[ Espaço para listar os elementos, texturas e materiais ]"
+concept: "Estética atemporal para o ritmo da vida moderna."
+elements: "Luz natural valorizada, integração clássico-contemporâneo, materiais nobres."
 ---
 
-No **Apto Duque**, o trabalho buscou uma integração perfeita entre estética atemporal e o ritmo da vida moderna, valorizando a entrada de luz natural.
-
-[ Espaço para detalhar o layout, as escolhas estéticas, os detalhes de marcenaria e as cores usadas. ]
+No **Apto Duque**, o trabalho buscou uma integração perfeita entre estética atemporal e o ritmo da vida moderna, valorizando a entrada de luz natural. A marcenaria sob medida e a paleta equilibrada criam um ambiente sofisticado e acolhedor.

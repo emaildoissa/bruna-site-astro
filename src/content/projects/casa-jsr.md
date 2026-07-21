@@ -18,10 +18,8 @@ gallery: [
   "/casa-JSR/Casa JSR_pátio03.jpg"
 ]
 accentColor: "#a67c5d"
-concept: "[ Espaço para descrever o conceito central do projeto ]"
-elements: "[ Espaço para listar os elementos, texturas e materiais ]"
+concept: "Vida em família com espaços amplos e integrados."
+elements: "Cozinha ampla, pátio externo integrado, acabamentos naturais."
 ---
 
-A **Casa JSR** traz a essência de um lar completo. A cozinha ampla, a relação com o pátio externo e os acabamentos foram escolhidos para criar um refúgio acolhedor.
-
-[ Espaço para detalhar os fluxos, as escolhas arquitetônicas, a iluminação e as integrações dos ambientes. ]
+A **Casa JSR** traz a essência de um lar completo. A cozinha ampla, a relação com o pátio externo e os acabamentos foram escolhidos para criar um refúgio acolhedor. A iluminação natural generosa e os fluxos integrados tornam cada ambiente convidativo.

@@ -18,10 +18,8 @@ gallery: [
   "/quarto-infantis/Quarto Jojô_papeldeparede 02.jpg"
 ]
 accentColor: "#a67c5d"
-concept: "[ Espaço para descrever o conceito central do projeto ]"
-elements: "[ Espaço para listar os elementos, texturas e materiais ]"
+concept: "Ludicidade e funcionalidade em harmonia."
+elements: "Mobiliário sob medida, papel de parede lúdico, espaços de estudo e brincar integrados."
 ---
 
-O projeto para os **Quartos Infantis** foi norteado pela ludicidade e pela funcionalidade. Espaços para estudo, organização e brincadeiras se integram harmoniosamente.
-
-[ Espaço para complementar sobre as características, mobiliário desenhado sob medida e escolhas de papel de parede. ]
+O projeto para os **Quartos Infantis** foi norteado pela ludicidade e pela funcionalidade. Espaços para estudo, organização e brincadeiras se integram harmoniosamente. Cada detalhe foi pensado para estimular a criatividade e acompanhar o crescimento da criança.

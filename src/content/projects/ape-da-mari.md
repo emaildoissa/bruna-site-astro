@@ -1,5 +1,5 @@
 ---
-title: "Apê da Mari (Novo)"
+title: "Apê da Mari"
 slug: "ape-da-mari"
 category: "Arquitetura de Interiores"
 location: "Porto Alegre, RS"
@@ -18,10 +18,8 @@ gallery: [
   "/ape-da-mari/Ap da Mari - Sala 04.jpg"
 ]
 accentColor: "#a67c5d"
-concept: "[ Espaço para descrever o conceito central do projeto ]"
-elements: "[ Espaço para listar os elementos, texturas e materiais ]"
+concept: "Integração dos espaços e escolha cuidadosa de materiais."
+elements: "Materiais naturais, marcenaria sob medida e paleta neutra sofisticada."
 ---
 
-Neste projeto do **Apê da Mari**, a integração dos espaços e a escolha dos materiais foram fundamentais para criar um ambiente acolhedor e contemporâneo.
-
-[ Espaço para detalhar o layout, as escolhas estéticas, os detalhes de marcenaria e as cores usadas. ]
+Neste projeto do **Apê da Mari**, a integração dos espaços e a escolha dos materiais foram fundamentais para criar um ambiente acolhedor e contemporâneo. Cada cômodo foi pensado para fluir naturalmente, combinando funcionalidade e estética.

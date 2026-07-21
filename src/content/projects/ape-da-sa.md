@@ -18,10 +18,8 @@ gallery: [
   "/ape-da-sa/Ap Sá - pet.JPG"
 ]
 accentColor: "#a67c5d"
-concept: "[ Espaço para descrever o conceito central do projeto ]"
-elements: "[ Espaço para listar os elementos, texturas e materiais ]"
+concept: "Conforto e funcionalidade para a vida em família."
+elements: "Área social integrada, churrasqueira, marcenaria planejada e espaços para o pet."
 ---
 
-O projeto do **Apê Sá** foi desenhado com um olhar especial para a área social, integrando churrasqueira e estar em um ambiente fluido e convidativo.
-
-[ Espaço para complementar sobre as características do apartamento, integração e mobiliário. ]
+O projeto do **Apê Sá** foi desenhado com um olhar especial para a área social, integrando churrasqueira e estar em um ambiente fluido e convidativo. A marcenaria planejada e os acabamentos selecionados trazem personalidade a cada ambiente.

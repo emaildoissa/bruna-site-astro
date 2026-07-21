@@ -14,6 +14,7 @@ const { project } = Astro.props;
 const { Content } = await render(project);
 const {
   title,
+  slug,
   category,
   location,
   year,
@@ -26,7 +27,15 @@ const {
 } = project.data;
 ---
 
-<Layout title={`${title} | Bruna Schlos Arquitetura`} description={excerpt}>
+<Layout
+  title={`${title} | Bruna Schlos Arquitetura`}
+  description={excerpt}
+  breadcrumbs={[
+    { name: "Home", item: "/" },
+    { name: "Projetos", item: "/#projetos" },
+    { name: title, item: `/projetos/${slug}` },
+  ]}
+>
   <article>
     <!-- Hero cover -->
     <header
@@ -200,7 +209,7 @@ const {
             href="https://wa.me/5551999414246?text=Ol%C3%A1%20Bruna!%20Vi%20o%20projeto%20e%20gostaria%20de%20conversar."
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex shrink-0 items-center justify-center rounded-full bg-ink px-7 py-3.5 text-sm text-cream tracking-wide hover:bg-terracotta-dark transition-colors"
+            class="inline-flex shrink-0 items-center justify-center rounded-full bg-ink px-7 py-3.5 text-sm text-cream tracking-wide hover:bg-ink-dark transition-colors"
           >
             Falar no WhatsApp
           </a>
