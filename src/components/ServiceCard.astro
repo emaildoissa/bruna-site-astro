@@ -8,9 +8,20 @@ interface Props {
   cta?: string;
   href?: string;
   footerText?: string;
+  image?: string;
 }
 
-const { number, title, description, items = [], delay = "", cta, href, footerText } = Astro.props;
+const {
+  number,
+  title,
+  description,
+  items = [],
+  delay = "",
+  cta,
+  href,
+  footerText,
+  image,
+} = Astro.props;
 ---
 
 <article
@@ -20,30 +31,36 @@ const { number, title, description, items = [], delay = "", cta, href, footerTex
   ]}
 >
   <!-- Technical anchor crosshair -->
-  <div class="absolute top-3 right-3 font-mono text-[0.6rem] text-muted/30 select-none">⊕</div>
 
   <div class="grid lg:grid-cols-12 gap-8 lg:gap-16">
     <!-- Left Column: Number, Title, Desktop CTA -->
     <div class="lg:col-span-5 flex flex-col items-start">
-      <span
-        class="font-mono text-xs text-sand tracking-widest leading-none select-none mb-4 block"
+      <h3
+        class="font-serif text-2xl md:text-3xl lg:text-4xl text-ink leading-tight text-balance"
       >
-        [ DETALHE_{number} ]
-      </span>
-      <h3 class="font-serif text-2xl md:text-3xl lg:text-4xl text-ink leading-tight text-balance">{title}</h3>
-      
-      {cta && (
-        <div class="hidden lg:block mt-auto pt-8 w-full">
-          <a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center justify-center px-6 py-3 bg-terracotta text-cream text-xs uppercase tracking-wider font-medium rounded-sm hover:bg-terracotta-dark transition-colors duration-300 w-full"
-          >
-            {cta}
-          </a>
+        {title}
+      </h3>
+
+      {image && (
+        <div class="w-full flex justify-center mt-8 mb-4">
+          <img src={image} alt="" class="w-24 h-24 md:w-32 md:h-32 object-contain mix-blend-multiply" />
         </div>
       )}
+
+      {
+        cta && (
+          <div class="hidden lg:block mt-auto pt-8 w-full">
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center px-6 py-3 bg-terracotta text-cream text-xs uppercase tracking-wider font-medium rounded-sm hover:bg-terracotta-dark transition-colors duration-300 w-full"
+            >
+              {cta}
+            </a>
+          </div>
+        )
+      }
     </div>
 
     <!-- Right Column: Description, Items, Mobile CTA -->
@@ -52,10 +69,10 @@ const { number, title, description, items = [], delay = "", cta, href, footerTex
         {description}
       </p>
 
-      {items && items.length > 0 && (
-        <ul class="mt-8 space-y-2.5 border-t border-line/50 pt-6">
-          {
-            items.map((item) => (
+      {
+        items && items.length > 0 && (
+          <ul class="mt-8 space-y-2.5 border-t border-line/50 pt-6">
+            {items.map((item) => (
               <li class="flex items-start gap-3 text-sm text-ink-soft">
                 <span
                   class="mt-2.5 h-1.5 w-1.5 shrink-0 bg-terracotta rotate-45"
@@ -63,29 +80,33 @@ const { number, title, description, items = [], delay = "", cta, href, footerTex
                 />
                 <span class="flex-1 leading-relaxed">{item}</span>
               </li>
-            ))
-          }
-        </ul>
-      )}
+            ))}
+          </ul>
+        )
+      }
 
-      {footerText && (
-        <p class="mt-6 text-sm md:text-base text-ink-soft leading-relaxed font-medium">
-          {footerText}
-        </p>
-      )}
+      {
+        footerText && (
+          <p class="mt-6 text-sm md:text-base text-ink-soft leading-relaxed font-medium">
+            {footerText}
+          </p>
+        )
+      }
 
-      {cta && (
-        <div class="lg:hidden mt-8 pt-6 border-t border-line/50 text-center">
-          <a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-block px-6 py-3 bg-terracotta text-cream text-xs uppercase tracking-wider font-medium rounded-sm hover:bg-terracotta-dark transition-colors duration-300 w-full"
-          >
-            {cta}
-          </a>
-        </div>
-      )}
+      {
+        cta && (
+          <div class="lg:hidden mt-8 pt-6 border-t border-line/50 text-center">
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block px-6 py-3 bg-terracotta text-cream text-xs uppercase tracking-wider font-medium rounded-sm hover:bg-terracotta-dark transition-colors duration-300 w-full"
+            >
+              {cta}
+            </a>
+          </div>
+        )
+      }
     </div>
   </div>
 </article>
