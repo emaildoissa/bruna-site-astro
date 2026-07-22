@@ -41,11 +41,17 @@ const {
         {title}
       </h3>
 
-      {image && (
-        <div class="w-full flex justify-center mt-8 mb-4">
-          <img src={image} alt="" class="w-24 h-24 md:w-32 md:h-32 object-contain mix-blend-multiply" />
-        </div>
-      )}
+      {
+        image && (
+          <div class="w-full flex justify-center mt-20 md:mt-28 mb-8">
+            <img
+              src={image}
+              alt=""
+              class="w-24 h-24 md:w-32 md:h-32 object-contain"
+            />
+          </div>
+        )
+      }
 
       {
         cta && (

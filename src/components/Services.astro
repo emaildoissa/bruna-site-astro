@@ -17,16 +17,16 @@ const services = [
     description:
       "Sua reforma, do jeito que deveria ser. Cuidar de uma obra exige tempo, atenção e um conhecimento técnico que a maioria das pessoas simplesmente não tem — e não precisa ter. Estamos aqui para assumir essa responsabilidade com você, garantindo que cada decisão tomada em obra seja fiel ao projeto que construímos juntos. Cuidamos de tudo:",
     items: [
-      "Orçamentação detalhada de todos os itens, sem surpresas no meio do caminho",
-      "Coordenação de fornecedores, prazos e qualidade de execução",
-      "Vistorias semanais para garantir fidelidade ao projeto",
-      "Acompanhamento em lojas e showrooms para escolhas mais seguras e assertivas",
-      "Suporte direto para todas as suas dúvidas durante o processo",
+      "Orçamentação detalhada de todos os itens, sem surpresas no meio do caminho.",
+      "Coordenação de fornecedores, prazos e qualidade de execução.",
+      "Vistorias semanais para garantir fidelidade ao projeto.",
+      "Acompanhamento em lojas e showrooms para escolhas mais seguras e assertivas.",
+      "Suporte direto para todas as suas dúvidas durante o processo.",
     ],
     footerText: "Você mantém sua rotina. Nós entregamos o espaço pronto.",
     cta: "Solicite uma proposta de assessoria",
     href: "https://wa.me/5551999414246?text=Ol%C3%A1%20Bruna!%20Gostaria%20de%20solicitar%20uma%20proposta%20de%20assessoria%20de%20obra.",
-    image: "/simbolo-rosa.jpeg",
+    image: "/simbolo-rosav3.png",
   },
   {
     number: "03",
@@ -41,14 +41,15 @@ const services = [
     ],
     cta: "Solicite uma consultoria",
     href: "https://wa.me/5551999414246?text=Ol%C3%A1%20Bruna!%20Gostaria%20de%20solicitar%20uma%20consultoria.",
-    image: "/simbolo-rosa.jpeg",
+    image: "/simbolo-rosav3.png",
   },
 ];
 ---
 
-<section id="servicos" class="py-24 md:py-32 bg-cream relative overflow-hidden border-t border-line/40">
-
-
+<section
+  id="servicos"
+  class="py-24 md:py-32 bg-cream relative overflow-hidden border-t border-line/40"
+>
   <div class="container-site">
     <div class="max-w-2xl mb-14 md:mb-20">
       <p
@@ -74,13 +75,7 @@ const services = [
         services.map((service, i) => (
           <ServiceCard
             {...service}
-            delay={
-              i === 1
-                ? "reveal-delay-1"
-                : i === 2
-                  ? "reveal-delay-2"
-                  : ""
-            }
+            delay={i === 1 ? "reveal-delay-1" : i === 2 ? "reveal-delay-2" : ""}
           />
         ))
       }

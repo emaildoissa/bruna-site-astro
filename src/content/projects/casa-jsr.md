@@ -3,7 +3,7 @@ title: "Casa JSR"
 slug: "casa-jsr"
 category: "Arquitetura de Interiores"
 location: "Porto Alegre, RS"
-year: 2024
+year: 2023
 excerpt: "Uma casa pensada para a vida em família, com espaços amplos e acolhedores."
 featured: true
 order: 9

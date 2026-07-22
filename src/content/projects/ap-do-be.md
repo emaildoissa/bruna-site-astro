@@ -3,7 +3,7 @@ title: "Apê do Bê"
 slug: "ap-do-be"
 category: "Arquitetura de Interiores"
 location: "Porto Alegre, RS"
-year: 2023
+year: 2021
 excerpt: "Um apartamento pensado para acolher o dia a dia com leveza — luz natural, materiais tácteis e espaços que convidam a ficar."
 featured: true
 order: 1

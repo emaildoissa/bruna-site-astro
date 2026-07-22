@@ -3,19 +3,21 @@ title: "Apê da Mari"
 slug: "ape-da-mari"
 category: "Arquitetura de Interiores"
 location: "Porto Alegre, RS"
-year: 2024
+year: 2023
 excerpt: "Detalhes de um projeto moderno e cheio de personalidade."
 featured: true
 order: 7
 coverGradient: "linear-gradient(160deg, #d9c4a8 0%, #a67c5d 40%, #2c2825 100%)"
-coverImage: "/ape-da-mari/Ap da Mari - Sala.jpg"
+coverImage: "/ape-da-mari/mari-1.jpeg"
 gallery: [
-  "/ape-da-mari/Ap da Mari - Banho Suíte.jpg",
-  "/ape-da-mari/Ap da Mari - Cozinha 01.jpg",
-  "/ape-da-mari/Ap da Mari - Sala 01.jpg",
-  "/ape-da-mari/Ap da Mari - Suíte.jpg",
-  "/ape-da-mari/Ap da Mari - Lavabo.jpg",
-  "/ape-da-mari/Ap da Mari - Sala 04.jpg"
+  "/ape-da-mari/mari-2.jpeg",
+  "/ape-da-mari/mari-3.jpeg",
+  "/ape-da-mari/mari-4.jpeg",
+  "/ape-da-mari/mari-5.jpeg",
+  "/ape-da-mari/mari-6.jpeg",
+  "/ape-da-mari/mari-7.jpeg",
+  "/ape-da-mari/mari-8.jpeg",
+  "/ape-da-mari/mari-9.jpeg"
 ]
 accentColor: "#a67c5d"
 concept: "Integração dos espaços e escolha cuidadosa de materiais."

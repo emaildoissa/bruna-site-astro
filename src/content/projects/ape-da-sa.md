@@ -3,7 +3,7 @@ title: "Apê Sá"
 slug: "ape-da-sa"
 category: "Arquitetura de Interiores"
 location: "Porto Alegre, RS"
-year: 2024
+year: 2021
 excerpt: "Um projeto que integra conforto e funcionalidade, perfeito para momentos em família e com o pet."
 featured: true
 order: 8
